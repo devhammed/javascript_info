@@ -6,6 +6,7 @@ const puppeteer = require('puppeteer')
 ;(async () => {
   const pageMargin = 1
   const bookDir = './book'
+  const finalOutputFilename = 'JavaScript-Book.pdf'
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
   await page.goto('https://javascript.info', { waitUntil: 'networkidle0' })
@@ -49,13 +50,13 @@ const puppeteer = require('puppeteer')
 
   await browser.close()
 
-  merge(pages.map(page => page.fileName), 'JavaScript-Book.pdf', err => {
+  merge(pages.map(page => page.fileName), finalOutputFilename, err => {
     if (err) {
       console.log(`Unable to merge PDFs :: ${err}`)
       return
     }
 
     rimraf.sync(bookDir)
-    console.log('Successfully converted and merged the PDFs!')
+    console.log(`Successfully converted and merged the PDFs as ${finalOutputFilename}!`)
   })
 })()
