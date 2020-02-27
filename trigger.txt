@@ -1,4 +1,4 @@
-# Version: 1.0.1
+# Version: 1.0.2
 # Author: Hammed Oyedele
 # Project: JavaScript.info Website as PDF
 # Description: This file is used to trigger GitHub Actions automated builds
