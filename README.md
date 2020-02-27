@@ -1,6 +1,6 @@
 # javascript_info
 
-A script that downloads javascript.info website as PDF 🎉🎉🎉
+A script that downloads [javascript.info](https://javascript.info) website as PDF 🎉🎉🎉
 
 ## How to Use
 
