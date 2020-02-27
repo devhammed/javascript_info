@@ -1,0 +1,17 @@
+{
+  "name": "javascript_info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Hammed Oyedele <itz.harmid@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "easy-pdf-merge": "^0.2.2",
+    "puppeteer": "^2.1.0",
+    "rimraf": "^3.0.1"
+  }
+}
