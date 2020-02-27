@@ -22,7 +22,7 @@ jobs:
         run: npm start
       - name: Zip PDF file and README.md
         run: |
-          zip --junk-paths JavaScript-Book.pdf README.md
+          zip --junk-paths JavaScript-Book.pdf.zip JavaScript-Book.pdf README.md
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
