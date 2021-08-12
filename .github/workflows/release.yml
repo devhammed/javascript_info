@@ -24,7 +24,8 @@ jobs:
         run: |
           zip --junk-paths JavaScript-Book.pdf.zip JavaScript-Book.pdf README.md
       - name: Get Version
-        run: echo "APP_VERSION=$(cat trigger.txt | grep -oP '(?<=# Version: )(.*)')" >> $GITHUB_ENV
+        run: |
+          echo "APP_VERSION=$(cat trigger.txt | grep -oP '(?<=# Version: )(.*)')" >> $GITHUB_ENV
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
