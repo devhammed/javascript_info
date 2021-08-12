@@ -23,14 +23,16 @@ jobs:
       - name: Zip PDF file and README.md
         run: |
           zip --junk-paths JavaScript-Book.pdf.zip JavaScript-Book.pdf README.md
+      - name: Get Version
+        run: echo "APP_VERSION=$(cat trigger.txt | grep -oP '(?<=# Version: )(.*)')" >> $GITHUB_ENV
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ env.APP_VERSION }}
+          release_name: ${{ env.APP_VERSION }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
